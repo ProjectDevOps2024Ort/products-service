@@ -32,5 +32,7 @@ WORKDIR /app
 # Copiar el JAR construido en la etapa anterior al contenedor final
 COPY --from=build /app/target/*.jar app.jar
 
+EXPOSE 8080
+
 # Definir el comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
