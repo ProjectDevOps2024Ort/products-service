@@ -30,7 +30,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el JAR construido en la etapa anterior al contenedor final
-RUN echo "Contenido de /app/target/:" && ls -al /app/target/
+RUN echo "Contenido de /app/target/:" && ls -al --from=build /app/target/
 
 COPY --from=build /app/target/*.jar app.jar
 
