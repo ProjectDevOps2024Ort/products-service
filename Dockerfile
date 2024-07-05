@@ -30,7 +30,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el JAR construido en la etapa anterior al contenedor final
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/app.jar app.jar
 
 EXPOSE 8080
 
