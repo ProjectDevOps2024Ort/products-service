@@ -23,6 +23,7 @@ COPY src ./src
 # Compilar la aplicación utilizando Maven Wrapper
 RUN ./mvnw clean package -DskipTests
 
+# Para ver el contenido de la carpeta
 RUN echo "Contenido de /app/target/:" && ls -la /app/target
 
 # Etapa 2: Crear la imagen para ejecutar la aplicación
